@@ -252,6 +252,11 @@ public class Main {
         continue;
       }
 
+      if ( argv[i].equals("--noconstr") || argv[i].equals("-noconstr") ) { //$NON-NLS-1$ //$NON-NLS-2$
+        Options.no_constructors = true;
+        continue;
+      }
+
       if ( argv[i].startsWith("-") ) { //$NON-NLS-1$
         Out.error(ErrorMessages.UNKNOWN_COMMANDLINE, argv[i]);
         printUsage();

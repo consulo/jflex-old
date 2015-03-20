@@ -1,5 +1,6 @@
 * JFlex 1.4.4 (March 20, 2015)
 - removed sliceandcharat option
+- added option for disable generate default contructors --noconstr
 
 * JFlex 1.4.3 (Jan 31, 2009)
 - fixed bug #2018299 (lookahead syntax error)

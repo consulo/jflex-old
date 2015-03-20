@@ -53,6 +53,8 @@ public class Options {
   public static boolean no_backup;
   /** use charAt function for accessing the zzBuffer */
   public static boolean char_at;
+  // option for disable generate default constructors
+  public static boolean no_constructors;
 
 
   /** default code generation method */
