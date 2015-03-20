@@ -54,8 +54,6 @@ public class Options {
   /** use charAt function for accessing the zzBuffer */
   public static boolean char_at;
 
-  /** use charAt function for accessing the zzBuffer and [] for zzBufferArray */
-  public static boolean sliceAndCharAt;
 
   /** default code generation method */
   public static int gen_method;

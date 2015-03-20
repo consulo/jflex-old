@@ -31,12 +31,12 @@ import JFlex.gui.MainFrame;
  * starting up the GUI if necessary, etc. 
  *
  * @author Gerwin Klein
- * @version $Revision: 1.4.3 $, $Date: 2009/12/21 15:58:48 $
+ * @version $Revision: 1.4.4 $, $Date: 2009/12/21 15:58:48 $
  */
 public class Main {
   
   /** JFlex version */
-  final public static String version = "1.4.3"; //$NON-NLS-1$
+  final public static String version = "1.4.4"; //$NON-NLS-1$
 
   /**
    * Generates a scanner for the specified input file.
@@ -249,11 +249,6 @@ public class Main {
 
       if ( argv[i].equals("--charat") || argv[i].equals("-charat") ) { //$NON-NLS-1$ //$NON-NLS-2$
         Options.char_at = true;
-        continue;
-      }
-
-      if ( argv[i].equals("--sliceandcharat") || argv[i].equals("-sliceandcharat") ) { //$NON-NLS-1$ //$NON-NLS-2$
-        Options.sliceAndCharAt = true;
         continue;
       }
 

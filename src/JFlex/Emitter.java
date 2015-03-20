@@ -358,9 +358,6 @@ final public class Emitter {
   }
   
   private String zzBufferLAccess(String idx) {
-    if (Options.sliceAndCharAt) {
-      return "(zzBufferArrayL != null ? zzBufferArrayL[" + idx + "] : zzBufferL.charAt("+idx+"))";
-    }
     if (Options.char_at) {
       return "zzBufferL.charAt("+idx+")";
     }
@@ -368,9 +365,6 @@ final public class Emitter {
   }
 
   private String zzBufferLLength() {
-    if (Options.sliceAndCharAt) {
-      return "(zzBufferArrayL != null ? zzBufferArrayL.length : zzBufferL.length())";
-    }
     if (Options.char_at) {
       return "zzBufferL.length()";
     }

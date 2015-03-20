@@ -1,3 +1,6 @@
+* JFlex 1.4.4 (March 20, 2015)
+- removed sliceandcharat option
+
 * JFlex 1.4.3 (Jan 31, 2009)
 - fixed bug #2018299 (lookahead syntax error)
 - fixed bug #2010261 (min_int in Java example scanner)
