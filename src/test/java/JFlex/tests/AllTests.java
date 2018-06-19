@@ -21,6 +21,7 @@
 package JFlex.tests;
 
 import junit.framework.Test;
+import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
@@ -29,12 +30,7 @@ import junit.framework.TestSuite;
  * @author Gerwin Klein
  * @version $Revision: 1.4.3 $, $Date: 2009/12/21 15:58:48 $
  */
-public class AllTests {
-
-  public static void main(String[] args) {
-    junit.textui.TestRunner.run(AllTests.class);
-  }
-
+public class AllTests extends TestCase {
   public static Test suite() {
     TestSuite suite = new TestSuite("JFlex tests");
     //$JUnit-BEGIN$
