@@ -159,7 +159,7 @@ public class Skeleton
 	 *
 	 * @param stream the file to read (must be != null and readable)
 	 */
-	public static void readSkelResource(InputStream stream)
+	public static void readSkelSteam(InputStream stream)
 	{
 		if(stream == null)
 		{
