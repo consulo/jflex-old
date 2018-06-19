@@ -155,6 +155,32 @@ public class Skeleton
 	}
 
 	/**
+	 * Reads an skeleton file from input steam for later use with this class.
+	 *
+	 * @param stream the file to read (must be != null and readable)
+	 */
+	public static void readSkelResource(InputStream stream)
+	{
+		if(stream == null)
+		{
+			throw new IllegalArgumentException("Skeleton steam must not be null"); //$NON-NLS-1$
+		}
+
+		Out.println(ErrorMessages.READING_SKEL, stream.toString());
+
+		try
+		{
+			BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
+			readSkel(reader);
+		}
+		catch(IOException e)
+		{
+			Out.error(ErrorMessages.SKEL_IO_ERROR);
+			throw new GeneratorException();
+		}
+	}
+
+	/**
 	 * Reads an external skeleton file for later use with this class.
 	 *
 	 * @param skeletonFile the file to read (must be != null and readable)
