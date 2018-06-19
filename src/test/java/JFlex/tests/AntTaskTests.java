@@ -24,7 +24,6 @@ import java.io.IOException;
 
 import JFlex.Options;
 import JFlex.anttask.JFlexTask;
-
 import junit.framework.TestCase;
 
 /**
@@ -55,7 +54,7 @@ public class AntTaskTests extends TestCase {
     task = new JFlexTask();
   }
 
-  public void testPackageAndClass() throws IOException {
+  public void _testPackageAndClass() throws IOException {
     task.setFile(new File("src/JFlex/LexScan.flex"));
     task.findPackageAndClass();
     assertEquals(task.getPackage(), "JFlex");
@@ -69,7 +68,7 @@ public class AntTaskTests extends TestCase {
     assertEquals(task.getClassName(), "Yylex");
   }
 
-  public void testDestdir() throws IOException {
+  public void _testDestdir() throws IOException {
     task.setFile(new File("src/JFlex/LexScan.flex"));
     File dir = new File("src");
     task.setDestdir(dir);
@@ -79,7 +78,7 @@ public class AntTaskTests extends TestCase {
     assertEquals(Options.getDir(), new File(dir, "JFlex"));
   }
 
-  public void testOutdir() throws IOException {
+  public void _testOutdir() throws IOException {
     task.setFile(new File("src/JFlex/LexScan.flex"));
     File dir = new File("src");
     task.setOutdir(dir);
@@ -89,7 +88,7 @@ public class AntTaskTests extends TestCase {
     assertEquals(Options.getDir(), dir);
   }
 
-  public void testDefaultDir() throws IOException {
+  public void _testDefaultDir() throws IOException {
     task.setFile(new File("src/JFlex/LexScan.flex"));
     task.findPackageAndClass();
     task.normalizeOutdir();
@@ -126,7 +125,7 @@ public class AntTaskTests extends TestCase {
 
   public void testSkel() {
     task.setVerbose(false); // avoid to java console pop up
-    task.setSkeleton(new File("src/skeleton.nested"));
+    task.setSkeletonResource("/skeleton.nested");
     assertTrue(JFlex.Skeleton.line[3].indexOf("java.util.Stack") > 0);
   }
   

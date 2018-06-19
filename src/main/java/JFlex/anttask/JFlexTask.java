@@ -257,6 +257,11 @@ public class JFlexTask extends Task
 		Options.setSkeleton(skeleton);
 	}
 
+	public void setSkeletonResource(String skeleton)
+	{
+		Options.setSkeletonResource(skeleton);
+	}
+
 	public void setSkel(File skeleton)
 	{
 		setSkeleton(skeleton);

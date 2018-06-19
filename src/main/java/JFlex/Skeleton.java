@@ -23,6 +23,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
@@ -119,6 +120,39 @@ public class Skeleton
 		}
 	}
 
+
+	/**
+	 * Reads an skeleton file from resources for later use with this class.
+	 *
+	 * @param skeletonResource the file to read (must be != null and readable)
+	 */
+	public static void readSkelResource(String skeletonResource)
+	{
+		if(skeletonResource == null)
+		{
+			throw new IllegalArgumentException("Skeleton file must not be null"); //$NON-NLS-1$
+		}
+
+		InputStream resourceAsStream = Skeleton.class.getResourceAsStream(skeletonResource);
+		if(resourceAsStream == null)
+		{
+			Out.error(ErrorMessages.CANNOT_READ_SKEL, skeletonResource.toString());
+			throw new GeneratorException();
+		}
+
+		Out.println(ErrorMessages.READING_SKEL, skeletonResource.toString());
+
+		try
+		{
+			BufferedReader reader = new BufferedReader(new InputStreamReader(resourceAsStream, "UTF-8"));
+			readSkel(reader);
+		}
+		catch(IOException e)
+		{
+			Out.error(ErrorMessages.SKEL_IO_ERROR);
+			throw new GeneratorException();
+		}
+	}
 
 	/**
 	 * Reads an external skeleton file for later use with this class.
